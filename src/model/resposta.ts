@@ -1,18 +1,28 @@
 export default class RespostaModel {
-    #id: number
     #texto: string
     #correta: boolean
     #revelada: boolean
 
-    constructor(id: number, texto: string, correta: boolean, revelada: boolean = false) {
-        this.#id = id
+    constructor(texto: string, correta: boolean, revelada: boolean = false) {
         this.#texto = texto
         this.#correta = correta
         this.#revelada = revelada
     }
 
-    get id() {
-        return this.#id
+    static verdadeira(texto: string) {
+        return new RespostaModel(texto, true)
+    }
+
+    static falsa(texto: string) {
+        return new RespostaModel(texto, false)
+    }
+
+    paraObjeto() {
+        return {
+            texto: this.#texto,
+            correta: this.#correta,
+            revelada: this.#revelada,
+        }
     }
 
     get texto() {

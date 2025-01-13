@@ -13,6 +13,15 @@ export default class QuestaoModel {
         this.#acertou = acertou
     }
 
+    paraObjeto() {
+        return {
+            id: this.#id,
+            enunciado: this.#enunciado,
+            respostas: this.#respostas.map(respota => respota.paraObjeto()),
+            acertou: this.#acertou
+        }
+    }
+
     get id() {
         return this.#id
     }
