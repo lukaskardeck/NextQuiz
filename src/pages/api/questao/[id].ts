@@ -6,7 +6,8 @@ export default function questao(req: NextApiRequest, res: NextApiResponse) {
     const questao = questoes.filter( quest => quest.id ===  idDaQuestao)
 
     if (questao.length === 1) { // Existe uma questão com o id requisitado
-        res.status(200).json(questao[0].paraObjeto());
+        const questaoRequisitada = questao[0].embaralharRespostas()
+        res.status(200).json(questaoRequisitada.paraObjeto());
     }
 
     else {

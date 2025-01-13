@@ -1,3 +1,4 @@
+import { embaralharElementos } from "@/functions/array"
 import RespostaModel from "./resposta"
 
 export default class QuestaoModel {
@@ -11,6 +12,11 @@ export default class QuestaoModel {
         this.#enunciado = enunciado
         this.#respostas = respostas
         this.#acertou = acertou
+    }
+
+    embaralharRespostas() {
+        this.#respostas = embaralharElementos(this.#respostas)
+        return new QuestaoModel(this.#id, this.#enunciado, this.#respostas, this.#acertou)
     }
 
     paraObjeto() {
