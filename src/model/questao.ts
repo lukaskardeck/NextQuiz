@@ -14,17 +14,29 @@ export default class QuestaoModel {
         this.#acertou = acertou
     }
 
-    embaralharRespostas() {
+    embaralharRespostas(): QuestaoModel {
         this.#respostas = embaralharElementos(this.#respostas)
         return new QuestaoModel(this.#id, this.#enunciado, this.#respostas, this.#acertou)
+    }
+
+    responderQuestao(indiceResposta: number): QuestaoModel {
+        const acertou = this.respostas[indiceResposta]?.correta
+        const respostas = this.respostas.map((resposta, i) => {
+            const respostaSelecionada = indiceResposta === i
+            const deveRevelar = respostaSelecionada || resposta.correta
+            return deveRevelar ? resposta.revelar() : resposta
+        })
+
+        return new QuestaoModel(this.id, this.enunciado, respostas, acertou)
     }
 
     paraObjeto() {
         return {
             id: this.#id,
             enunciado: this.#enunciado,
+            acertou: this.#acertou,
+            respondida: this.respondida,
             respostas: this.#respostas.map(respota => respota.paraObjeto()),
-            acertou: this.#acertou
         }
     }
 

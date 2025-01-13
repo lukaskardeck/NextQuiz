@@ -17,6 +17,10 @@ export default class RespostaModel {
         return new RespostaModel(texto, false)
     }
 
+    revelar() {
+        return new RespostaModel(this.#texto, this.#correta, true)
+    }
+
     paraObjeto() {
         return {
             texto: this.#texto,
