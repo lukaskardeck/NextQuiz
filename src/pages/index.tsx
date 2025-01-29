@@ -16,12 +16,22 @@ export default function Home() {
 
   function funcao(indiceResposta: number) {
     setQuestao(questao.responderQuestao(indiceResposta))
-    console.log(indiceResposta)
+  }
+
+  function tempoEsgotado() {
+    if (questao.naoRespondida) {
+      setQuestao(questao.responderQuestao(-1))
+    }
   }
   
   return (
     <div style={styleMain}>
-      <Questao questao={questao} aoResponder={funcao}/>
+      <Questao 
+        questao={questao} 
+        tempoParaExibirResposta={10}
+        aoResponder={funcao}
+        tempoEsgotado={tempoEsgotado}
+      />
     </div>
   );
 }
