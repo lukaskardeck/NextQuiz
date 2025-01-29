@@ -1,15 +1,9 @@
 import Questao from "@/components/Questao";
 import questoes from "./api/bancoDeQuestoes";
 import { useState } from "react";
+import Botao from "@/components/Botao";
 
 export default function Home() {
-  const styleMain = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-  }
-
   const questaoMock = questoes[1]
 
   const [questao, setQuestao] = useState(questaoMock)
@@ -25,13 +19,22 @@ export default function Home() {
   }
   
   return (
-    <div style={styleMain}>
+    <div style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      gap: "24px"
+    }}>
       <Questao 
         questao={questao} 
         tempoParaExibirResposta={10}
         aoResponder={funcao}
         tempoEsgotado={tempoEsgotado}
       />
+
+      <Botao texto="Olá, mundo!"/>
     </div>
   );
 }
