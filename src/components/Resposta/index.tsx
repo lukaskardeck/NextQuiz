@@ -14,17 +14,37 @@ export default function Resposta(props: RespostaProps) {
     return (
         <div className={styles.resposta} onClick={() => props.aoResponder(props.indice)}>
             <div className={styles.conteudoResposta}>
-                <div className={styles.frente}>
-                    <div className={styles.letra} style={{ backgroundColor: props.corFundoLetra }}>
-                        {props.letra}
-                    </div>
-                    <div className={styles.texto}>
-                        {resposta.texto}
-                    </div>
-                </div>
-                <div className={styles.verso}>
 
-                </div>
+                {!resposta.revelada ? (
+                    <div className={styles.frente}>
+                        <div className={styles.letra} style={{ backgroundColor: props.corFundoLetra }}>
+                            {props.letra}
+                        </div>
+                        <div className={styles.texto}>
+                            {resposta.texto}
+                        </div>
+                    </div>
+                ) : (
+                    <div className={styles.verso}>
+                        {resposta.correta ? (
+                            <div className={styles.certa}>
+                                <div>A resposta certa é....</div>
+                                <div className={styles.texto}>
+                                    {resposta.texto}
+                                </div>
+                            </div>
+                        ) : (
+                            <div className={styles.errada}>
+                                <div>Afirmativa Incorreta</div>
+                                <div className={styles.texto}>
+                                    {resposta.texto}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
+
+
             </div>
         </div>
     )

@@ -28,6 +28,27 @@
     border-radius: 8px;
 }
 
+.verso > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.certa {
+    background-color: #2baa6d;
+}
+
+.errada {
+    background-color: #e44a4c;
+}
+
+.certa .texto, .errada .texto {
+    font-size: 1.5rem;
+}
+
 .letra {
     display: flex;
     align-items: center;
@@ -44,5 +65,5 @@
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    padding: 8px 24px;
+    padding: 0px 24px;
 }

@@ -1,5 +1,6 @@
 import Questao from "@/components/Questao";
 import questoes from "./api/bancoDeQuestoes";
+import { useState } from "react";
 
 export default function Home() {
   const styleMain = {
@@ -9,9 +10,12 @@ export default function Home() {
     height: "100vh",
   }
 
-  const questao = questoes[1]
+  const questaoMock = questoes[1]
+
+  const [questao, setQuestao] = useState(questaoMock)
 
   function funcao(indiceResposta: number) {
+    setQuestao(questao.responderQuestao(indiceResposta))
     console.log(indiceResposta)
   }
   
