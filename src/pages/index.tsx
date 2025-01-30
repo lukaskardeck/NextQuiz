@@ -40,8 +40,12 @@ export default function Home() {
         }
     }
 
+    function pegarNumeroDaQuestaoAtual() {
+        return questao ? idDasQuestoes.indexOf(questao.id) : -1
+    }
+
     function pegarProximoId() {
-        const indiceProximaQuestao = questao ? idDasQuestoes.indexOf(questao.id) + 1 : -1
+        const indiceProximaQuestao = questao ? pegarNumeroDaQuestaoAtual() + 1 : -1
         return idDasQuestoes[indiceProximaQuestao]
     }
     
@@ -74,6 +78,10 @@ export default function Home() {
             height: "100vh",
             gap: "24px"
         }}>
+            <h1>
+                {pegarNumeroDaQuestaoAtual() + 1} / {idDasQuestoes.length}
+            </h1>
+
             {questao ? (
                 <Questionario
                     questao={questao}
