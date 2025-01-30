@@ -1,0 +1,17 @@
+.resultado {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
+.titulo {
+    font-size: 4rem;
+}
+
+.estatisticas {
+    display: flex;
+    gap: 64px;
+}

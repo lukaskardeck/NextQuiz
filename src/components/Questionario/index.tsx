@@ -21,7 +21,7 @@ export default function Questionario(props: QuestionarioProps) {
         return (
             <Questao
                 questao={props.questao}
-                tempoParaExibirResposta={6}
+                tempoParaExibirResposta={10}
                 aoResponder={pegarRespostaFornecida}
                 aoEsgotarTempo={props.prosseguir}
             />
