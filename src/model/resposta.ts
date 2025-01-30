@@ -21,6 +21,10 @@ export default class RespostaModel {
         return new RespostaModel(this.#texto, this.#correta, true)
     }
 
+    static objetoParaInstancia(obj: RespostaModel) : RespostaModel {
+        return new RespostaModel(obj.texto, obj.correta, obj.revelada)
+    }
+
     paraObjeto() {
         return {
             texto: this.#texto,
