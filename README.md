@@ -29,12 +29,12 @@ Este é um projeto de um quiz de conhecimentos gerais desenvolvido com **Next.js
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+    git clone https://github.com/lukaskardeck/NextQuiz.git
     ```
 
 2. Acesse a pasta do projeto
     ``` bash
-    cd nome-do-repositorio
+    cd NextQuiz
     ```
 
 3. Instale as dependências:
