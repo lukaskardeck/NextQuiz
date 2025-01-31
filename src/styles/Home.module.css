@@ -1,0 +1,16 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 24px;
+}
+
+.titulo {
+    font-size: 3rem;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+}

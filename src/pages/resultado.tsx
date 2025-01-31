@@ -34,7 +34,7 @@ export default function Resultado() {
 
             <Botao
                 texto="Reiniciar"
-                href="/"
+                href="/quiz"
             />
         </div>
     )

@@ -13,3 +13,8 @@
 .botao:hover {
     transform: scale(1.1);
 }
+
+.inverterCor {
+    color: #9885f0;
+    background-color: white;
+}
